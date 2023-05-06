@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="vbox" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ctrl.Controller">
+   <children>
+      <MenuBar fx:id="menuBar">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#onClickNew" text="New File..." />
+              <MenuItem mnemonicParsing="false" onAction="#onClickOpen" text="Open File..." />
+              <MenuItem mnemonicParsing="false" onAction="#onClickSave" text="Save" />
+              <MenuItem mnemonicParsing="false" onAction="#onClickSaveAs" text="Save As..." />
+              <MenuItem mnemonicParsing="false" onAction="#onClickClose" text="Close" />
+              <MenuItem mnemonicParsing="false" onAction="#onClickRestart" text="Restart" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#onClickBack" text="Back" />
+              <MenuItem mnemonicParsing="false" onAction="#onClickReset" text="Reset" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="buttonReset" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickReset" prefHeight="100.0" prefWidth="100.0" text="Reset" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+            <CheckBox fx:id="checkBoxAttack" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Attack Chance" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+            <GridPane GridPane.columnIndex="5">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label alignment="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: #000000; -fx-background-color: #ff0000;" text="Red" />
+                  <Label alignment="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: #000000; -fx-background-color: #00ff00;" text="Green" GridPane.columnIndex="1" />
+                  <Label fx:id="labelRedCount" alignment="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: #000000;" text="0" GridPane.rowIndex="1" />
+                  <Label fx:id="labelGreenCount" alignment="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: #000000;" text="0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+            <GridPane GridPane.columnIndex="6">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label alignment="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: #000000;" text="White" />
+                  <Label alignment="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: #000000; -fx-background-color: #8888ff;" text="Blue" GridPane.columnIndex="1" />
+                  <Label fx:id="labelWhiteCount" alignment="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: #000000;" text="0" GridPane.rowIndex="1" />
+                  <Label fx:id="labelBlueCount" alignment="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: #000000;" text="0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+            <Button fx:id="buttonBack" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickBack" prefHeight="100.0" prefWidth="100.0" text="Back" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+            <Button fx:id="panel01" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickPanel" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #777777; -fx-border-color: #000000;" text="1">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+            <Button fx:id="panel02" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickPanel" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #777777; -fx-border-color: #000000;" text="2" GridPane.columnIndex="1">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+            <Button fx:id="panel03" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickPanel" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #777777; -fx-border-color: #000000;" text="3" GridPane.columnIndex="2">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+            <Button fx:id="panel04" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickPanel" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #777777; -fx-border-color: #000000;" text="4" GridPane.columnIndex="3">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+            <Button fx:id="panel05" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickPanel" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #777777; -fx-border-color: #000000;" text="5" GridPane.columnIndex="4">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+            <Button fx:id="panel06" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickPanel" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #777777; -fx-border-color: #000000;" text="6" GridPane.rowIndex="1">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+            <Button fx:id="panel07" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickPanel" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #777777; -fx-border-color: #000000;" text="7" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+            <Button fx:id="panel08" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickPanel" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #777777; -fx-border-color: #000000;" text="8" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+            <Button fx:id="panel09" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickPanel" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #777777; -fx-border-color: #000000;" text="9" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+            <Button fx:id="panel10" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickPanel" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #777777; -fx-border-color: #000000;" text="10" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+            <Button fx:id="panel11" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickPanel" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #777777; -fx-border-color: #000000;" text="11" GridPane.rowIndex="2">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+            <Button fx:id="panel12" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickPanel" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #777777; -fx-border-color: #000000;" text="12" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+            <Button fx:id="panel13" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickPanel" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #777777; -fx-border-color: #000000;" text="13" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+            <Button fx:id="panel14" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickPanel" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #777777; -fx-border-color: #000000;" text="14" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+            <Button fx:id="panel15" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickPanel" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #777777; -fx-border-color: #000000;" text="15" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+            <Button fx:id="panel16" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickPanel" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #777777; -fx-border-color: #000000;" text="16" GridPane.rowIndex="3">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+            <Button fx:id="panel17" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickPanel" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #777777; -fx-border-color: #000000;" text="17" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+            <Button fx:id="panel18" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickPanel" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #777777; -fx-border-color: #000000;" text="18" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+            <Button fx:id="panel19" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickPanel" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #777777; -fx-border-color: #000000;" text="19" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+            <Button fx:id="panel20" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickPanel" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #777777; -fx-border-color: #000000;" text="20" GridPane.columnIndex="4" GridPane.rowIndex="3">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+            <Button fx:id="panel21" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickPanel" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #777777; -fx-border-color: #000000;" text="21" GridPane.rowIndex="4">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+            <Button fx:id="panel22" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickPanel" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #777777; -fx-border-color: #000000;" text="22" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+            <Button fx:id="panel23" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickPanel" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #777777; -fx-border-color: #000000;" text="23" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+            <Button fx:id="panel24" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickPanel" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #777777; -fx-border-color: #000000;" text="24" GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+            <Button fx:id="panel25" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickPanel" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #777777; -fx-border-color: #000000;" text="25" GridPane.columnIndex="4" GridPane.rowIndex="4">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+            <ChoiceBox fx:id="choiceBoxColor" prefWidth="100.0" GridPane.columnIndex="6" GridPane.rowIndex="2">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="Red" />
+                     <String fx:value="Green" />
+                     <String fx:value="White" />
+                     <String fx:value="Blue" />
+                  </FXCollections>
+               </items>
+            </ChoiceBox>
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="100.0" text="Panel Color" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            <Slider fx:id="slider" blockIncrement="1.0" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="100.0" text="Volume" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+   </children>
+</VBox>
